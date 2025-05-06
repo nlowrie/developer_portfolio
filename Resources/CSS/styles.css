@@ -85,25 +85,27 @@ body {
   background: #fff;
 }
 
+/* Project Grid */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates a responsive grid with 3 columns */
+  gap: 20px; /* Adds spacing between project cards */
+  margin-top: 20px; /* Adds spacing above the grid */
 }
 
+/* Project Card */
 .project-card {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #f9f9f9; /* Light background for the card */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Internal spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds hover effect */
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
 .project-card h3 {
@@ -114,6 +116,32 @@ body {
 .project-card p {
   margin: 10px 0 0;
   color: #555;
+}
+
+.project-card img {
+  display: block;
+  margin: 0 auto; /* Centers the image horizontally */
+  border-radius: 5px; /* Optional: Adds rounded corners to the image */
+}
+
+.project-card h3, 
+.project-card p, 
+.project-card a {
+  text-align: left; /* Ensures text and links are left-aligned */
+  margin-top: 10px; /* Adds spacing between elements */
+}
+
+.project-card a {
+  display: inline-block; /* Ensures the margin applies properly */
+  margin-top: 10px; /* Adds space between the content and the link */
+  color: #1abc9c; /* Optional: Link color */
+  text-decoration: none; /* Removes underline from links */
+  font-weight: bold; /* Makes links bold */
+  transition: color 0.3s ease; /* Adds a hover effect */
+}
+
+.project-card a:hover {
+  color: #16a085; /* Changes link color on hover */
 }
 
 input, textarea {
@@ -171,5 +199,49 @@ h3 {
 ul {
   margin-left: 2rem; /* Indent the list to align with the heading */
   padding-left: 0; /* Remove default padding */
+}
+
+/* Section Separator */
+.section-separator {
+  background-color: #1abc9c; /* Matches the green color of buttons and links */
+  color: white; /* Ensures text is readable on the green background */
+  border-radius: 8px; /* Adds rounded corners */
+  padding: 20px; /* Adds internal spacing */
+  margin: 40px 0; /* Adds spacing above and below the separator */
+  text-align: center; /* Centers the text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.section-separator h2 {
+  margin: 0; /* Removes default margin */
+  font-size: 1.8rem; /* Adjusts the font size */
+  color: white; /* Ensures the text color matches the background */
+}
+
+.breadcrumbs {
+  margin: 20px 0; /* Adds spacing above and below the breadcrumbs */
+  font-size: 0.9rem; /* Adjusts the font size */
+}
+
+.breadcrumbs ul {
+  list-style: none; /* Removes default list styling */
+  display: flex; /* Displays breadcrumbs in a horizontal row */
+  gap: 10px; /* Adds spacing between breadcrumb items */
+  padding: 0; /* Removes default padding */
+}
+
+.breadcrumbs li {
+  display: inline; /* Ensures each breadcrumb is inline */
+}
+
+.breadcrumbs a {
+  color: #1abc9c; /* Matches the green color of links */
+  text-decoration: none; /* Removes underline from links */
+  font-weight: bold; /* Makes links bold */
+  transition: color 0.3s ease; /* Adds a hover effect */
+}
+
+.breadcrumbs a:hover {
+  color: #16a085; /* Changes link color on hover */
 }
 
