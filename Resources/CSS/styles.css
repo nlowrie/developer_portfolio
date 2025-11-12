@@ -5,12 +5,17 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden; /* Prevent horizontal scrolling on root */
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   background-color: #ffffff;
   color: #333;
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .container {
