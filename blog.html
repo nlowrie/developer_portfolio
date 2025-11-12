@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog - Nicholas Lowrie</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="Resources/CSS/styles.css">
 </head>
 <body>
   <header class="navbar">
@@ -21,10 +21,109 @@
     </div>
   </header>
 
-  <section id="blog" class="blog fade-in">
+  <section id="blog" class="projects fade-in">
     <div class="container">
-      <h2>Blog</h2>
-      <p>Coming soon: thoughts on product management, UX, and modern tech stacks.</p>
+      <div class="section-separator">
+        <h2>My Blog</h2>
+      </div>
+
+      <div class="section-separator">
+        <h2>Recent Posts</h2>
+      </div>
+      
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="Images/placeholder-blog1.jpg" alt="Product Management Tips" width="300" />
+          <h3>10 Essential Product Management Tips</h3>
+          <p>October 15, 2025</p>
+          <p>Exploring the key strategies that have helped me navigate complex product decisions throughout my career in the retail and event technology space.</p>
+          <a href="blog-post-1.html">Read More</a>
+        </div>
+        
+        <div class="project-card">
+          <img src="Images/placeholder-blog2.jpg" alt="POS Systems Evolution" width="300" />
+          <h3>The Evolution of POS Systems</h3>
+          <p>October 10, 2025</p>
+          <p>A deep dive into how point-of-sale technology has transformed over the past decade and what innovations we can expect in the coming years.</p>
+          <a href="#" target="_blank">Read More</a>
+        </div>
+        
+        <div class="project-card">
+          <img src="Images/placeholder-blog3.jpg" alt="Digital Commerce Trends" width="300" />
+          <h3>Digital Commerce Trends for 2026</h3>
+          <p>October 5, 2025</p>
+          <p>Analyzing emerging patterns in digital commerce and how businesses can position themselves to capitalize on these trends.</p>
+          <a href="#" target="_blank">Read More</a>
+        </div>
+      </div>
+
+      <div class="section-separator">
+        <h2>Technology</h2>
+      </div>
+      
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="Images/placeholder-tech1.jpg" alt="Future of Payments" width="300" />
+          <h3>The Future of Payment Infrastructure</h3>
+          <p>September 28, 2025</p>
+          <p>Examining how blockchain, cryptocurrencies, and biometric authentication are reshaping payment technologies across the retail landscape.</p>
+          <a href="#" target="_blank">Read More</a>
+        </div>
+        
+        <div class="project-card">
+          <img src="Images/placeholder-tech2.jpg" alt="Digital Menu Boards" width="300" />
+          <h3>Digital Menu Boards: Implementation Guide</h3>
+          <p>September 20, 2025</p>
+          <p>A comprehensive guide to selecting, implementing, and optimizing digital menu boards for food service businesses.</p>
+          <a href="#" target="_blank">Read More</a>
+        </div>
+      </div>
+
+      <div class="section-separator">
+        <h2>Product Management</h2>
+      </div>
+      
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="Images/placeholder-pm1.jpg" alt="Stakeholder Management" width="300" />
+          <h3>Mastering Stakeholder Management</h3>
+          <p>September 15, 2025</p>
+          <p>Strategies for effectively managing stakeholder expectations and driving alignment across complex organizations.</p>
+          <a href="#" target="_blank">Read More</a>
+        </div>
+        
+        <div class="project-card">
+          <img src="Images/placeholder-pm2.jpg" alt="Data-Driven Decisions" width="300" />
+          <h3>Data-Driven Decision Making</h3>
+          <p>September 8, 2025</p>
+          <p>How to leverage analytics and metrics to inform product strategy and make high-impact decisions.</p>
+          <a href="#" target="_blank">Read More</a>
+        </div>
+      </div>
+      
+      <!-- Add a simple form for comments -->
+      <div class="section-separator">
+        <h2>Leave a Comment</h2>
+      </div>
+      
+      <form id="comment-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="comment">Comment:</label>
+          <textarea id="comment" name="comment" rows="5" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn">Submit Comment</button>
+      </form>
     </div>
   </section>
 
@@ -33,37 +132,33 @@
       <p>&copy; 2025 Nicholas Lowrie. All rights reserved.</p>
     </div>
   </footer>
+
   <script>
     // Smooth scroll fade-in on scroll
     const faders = document.querySelectorAll('.fade-in');
 
     const appearOptions = {
-      threshold: .1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
     };
 
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-      entries.forEach(entry => {
+    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+      entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('visible');
         appearOnScroll.unobserve(entry.target);
       });
     }, appearOptions);
 
-    faders.forEach(fader => {
+    faders.forEach((fader) => {
       appearOnScroll.observe(fader);
     });
-
-    // Contact form handling (fake validation example)
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
+    
+    // Simple form handling
+    document.getElementById('comment-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      const status = document.querySelector('.form-status');
-      status.textContent = 'Sending...';
-
-      // Simulate async sending
-      setTimeout(() => {
-        status.textContent = 'Thanks! Your message has been sent.';
-      }, 1000);
+      alert('Thank you for your comment! In a real implementation, this would be saved to a database.');
+      this.reset();
     });
   </script>
 </body>
