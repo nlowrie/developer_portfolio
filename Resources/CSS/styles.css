@@ -207,15 +207,19 @@ ul {
   color: white; /* Ensures text is readable on the green background */
   border-radius: 8px; /* Adds rounded corners */
   padding: 20px; /* Adds internal spacing */
-  margin: 40px 0; /* Adds spacing above and below the separator */
+  margin: 40px 0 20px 0; /* Adds spacing above and less below the separator */
   text-align: center; /* Centers the text */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  display: block; /* Ensures block display */
+  width: 100%; /* Full width */
 }
 
 .section-separator h2 {
   margin: 0; /* Removes default margin */
   font-size: 1.8rem; /* Adjusts the font size */
   color: white; /* Ensures the text color matches the background */
+  font-weight: bold; /* Makes it bold */
+  display: block; /* Ensures block display */
 }
 
 .breadcrumbs {
