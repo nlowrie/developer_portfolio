@@ -295,6 +295,11 @@
     }, appearOptions);
 
     faders.forEach((fader) => {
+      // Immediately show content that's already in viewport on page load
+      const rect = fader.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        fader.classList.add('visible');
+      }
       appearOnScroll.observe(fader);
     });
   </script>
