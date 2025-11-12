@@ -205,13 +205,18 @@ ul {
 .section-separator {
   background-color: #1abc9c; /* Matches the green color of buttons and links */
   color: white; /* Ensures text is readable on the green background */
-  border-radius: 8px; /* Adds rounded corners */
+  border-radius: 0; /* Remove rounded corners for full-width bar */
   padding: 20px; /* Adds internal spacing */
   margin: 40px 0 20px 0; /* Adds spacing above and less below the separator */
   text-align: center; /* Centers the text */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
   display: block; /* Ensures block display */
-  width: 100%; /* Full width */
+  width: 100vw; /* Full viewport width */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .section-separator h2 {
